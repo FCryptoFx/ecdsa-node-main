@@ -7,9 +7,9 @@ app.use(cors());
 app.use(express.json());
 
 const balances = {
-  "eb5702a0b69dd8d855332dc59c4e0ce908773f9d": 100,
-  "887d12f93df60d9bcda2bdb25278fe59f6ddbe10": 50,
-  "10275502fe93950b21176fc7a9209741f2e734a5": 75,
+  "17042de8bb5ae206aac69b12f51208844d4957b1": 100,
+  "403d1e5a5e93905f0bfd7cb282d74c4796f1dc8f": 50,
+  "c9404d0b08c613c37bf43e8c8821a607bd3c10cc": 75,
 };
 
 app.get("/balance/:address", (req, res) => {
@@ -19,6 +19,9 @@ app.get("/balance/:address", (req, res) => {
 });
 
 app.post("/send", (req, res) => {
+  //TODO: get a signature from the client-side application
+  // recover the public address from the signature
+  
   const { sender, recipient, amount } = req.body;
 
   setInitialBalance(sender);

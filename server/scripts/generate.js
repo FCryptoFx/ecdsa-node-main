@@ -15,4 +15,4 @@ function getAddress(publicKey){
     // the first byte (2 first digits) indicates wether this is in compressed form or not
     return keccak256(publicKey.slice(1)).slice(-20);
 }
-console.log("Address: ", toHex(getAddress(publicKey)));
+console.log("Address: ", toHex(getAddress(publicKey)),"\n");
